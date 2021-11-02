@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title><%=product.name%></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <style>
+            body {
+              background-color: #daf1f1;
+            }
+            </style>
+    </head>
+    <body class="container d-flex flex-column">
+    <h1 class="container"><%=product.name%></h1>
+        <ul>
+            <div class="p-2"><li>Price: Rs.<%= product.price %></li></div>
+            <div class="p-2"><li>Quantity: <%= product.quantity %></li></div>
+            <div class="p-2"><li>Category: <%= product.category %></li></div>
+        </ul>
+        <center>
+            <div class="btn btn-primary">
+                <div class="row">
+                  <div class="col text-center">
+        <a href="/products/<%=product._id%>/edit" class="btn btn-primary" role="button">Edit</a>
+        </div>
+        </div>
+        </div>
+        </center>
+        <br>
+        <center>
+       <div>
+        <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">Delete</button>
+        </form>
+        </div>
+        </center>
+        <br>
+        <center>
+            <div class="btn btn-primary">
+                <div class="row">
+                  <div class="col text-center">
+        <a class="btn btn-primary" role="button" href="/products">Home</a>
+    </div> 
+    </div> 
+    </div>
+    </center>  
+    </body>
+</html>

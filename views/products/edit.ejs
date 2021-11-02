@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edit Product</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <style>
+            body {
+              background-color: #daf1f1;
+            }
+            </style>
+    </head>
+    <body class="container d-flex flex-column">
+    <h1>Edit Product</h1>
+    <form action="/products/<%=product._id%>?_method=PUT" method="POST">
+        <div class="p-2"><label for="name">Product Name</label>
+        <input type="text" name="name" placeholder="product name" value="<%=product.name%>"></div>
+        
+        <div class="p-2"><label for="price">Product Price</label>
+        <input type="number" name="price" placeholder="product price" value="<%=product.price%>">
+        
+        </div>
+        <div class="p-2"><label for="quantity">Product Quantity</label>
+        <input type="number" name="quantity" placeholder="product quantity">
+        <br>
+        </div>
+        <div class="p-2"><label for="category">Category</label>
+        <select name="category" id="category" >
+            <option value="fruit">fruit</option>
+            <option value="vegetable">vegetable</option>
+            <option value="dairy">dairy</option>
+        </select>
+        <br>
+        </div>
+        <center>
+        <button class="btn btn-success">Submit</button>
+        </center>
+    </form>  
+      </body>
+</html>
